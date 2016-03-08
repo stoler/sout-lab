@@ -1,0 +1,15 @@
+.breadcrumbs {
+  border-bottom: 2px solid $colorDark;
+  font-family: $fontsBaseRegular;
+  font-size: $size6;
+  padding: 0 0 3px 0;
+  margin: 0 10px 20px;
+  &__link {
+    font-family: $fontsBaseRegular;
+    color: $colorDark;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

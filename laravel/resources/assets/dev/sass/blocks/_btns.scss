@@ -1,0 +1,14 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  @include transition(all 0.4s easy);
+
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    outline: none;
+  }
+}

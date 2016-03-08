@@ -1,31 +1,16 @@
 var gulp = require('gulp'),
     uglify = require ('gulp-uglify'),
     csso = require ('gulp-csso'),
-    uncss = require ('gulp-uncss'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     compass = require('gulp-compass'),
-    jade = require('jade'),
-    gulpJade = require('gulp-jade'),
     browserSync = require('browser-sync').create();
 
-var src = './app/',
-    dest = './build/';
+var src = '.laravel/resource/assets/dev/',
+    dest = './laravel/resource/assets/build/';
 
 // сборка спрайтов
-
-
-// jade
-gulp.task('jade', function () {
-    return gulp.src(src + 'jade/**/*.jade')
-        .pipe(gulpJade({
-            jade: jade,
-            pretty: true
-        }))
-        .pipe(gulp.dest(src));
-});
-
 
 
 
@@ -73,7 +58,6 @@ gulp.task('watch', ['sass', 'jade'], function() {
 
     gulp.watch(src + 'scss/**/*.scss', ['sass']);
     //gulp.watch(src + 'js/**/*.js', ['js']);
-    gulp.watch(src + '**/*.jade', ['jade']);
     gulp.watch(src + "**/*").on('change', browserSync.reload);
 
 });

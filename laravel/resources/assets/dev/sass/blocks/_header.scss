@@ -1,0 +1,14 @@
+.b-header {
+  @extend .wrapper;
+  @extend .after-clear;
+  padding: 20px 0;
+  margin-bottom: 10px;
+
+  &__logo {
+
+  }
+
+  &__phone {
+
+  }
+}
