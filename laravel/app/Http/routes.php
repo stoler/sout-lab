@@ -65,3 +65,33 @@ Route::get('logout',[
     'uses' => 'AuthController@getLogout',
     'as' => 'logout'
 ]);
+
+Route::post('admin/file-upload',[
+    'uses' => 'JQueryFileUpload@index',
+    'as' => 'file-upload'
+]);
+
+Route::get('admin/file-upload',[
+    'uses' => 'JQueryFileUpload@index',
+    'as' => 'file-upload'
+]);
+
+Route::delete('admin/file-upload',[
+    'uses' => 'JQueryFileUpload@index',
+    'as' => 'file-upload'
+]);
+
+Route::post('admin/seo-upload',[
+    'uses' => 'JQueryFileUpload@index',
+    'as' => 'seo-upload'
+]);
+
+Route::get('admin/seo-upload',[
+    'uses' => 'JQueryFileUpload@index',
+    'as' => 'seo-upload'
+]);
+
+Route::delete('admin/seo-upload',[
+    'uses' => 'JQueryFileUpload@index',
+    'as' => 'seo-upload'
+]);

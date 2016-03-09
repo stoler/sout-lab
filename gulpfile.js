@@ -29,15 +29,31 @@ gulp.task('sprite', function () {
 //==========================================
 // build vendor js
 gulp.task('jsVendor', function() {
-    return gulp.src(['путь', 'путь'])
+    return gulp.src([
+            src + 'js/vendor/jquery/jquery-1.12.1.min.js',
+            src + 'js/vendor/jquery-file-upload/jquery.ui.widget.js',
+            src + 'js/vendor/jquery-file-upload/tmpl.min.js',
+            src + 'js/vendor/jquery-file-upload/load-image.all.min.js',
+            src + 'js/vendor/jquery-file-upload/jquery.iframe-transport.js',
+            src + 'js/vendor/jquery-file-upload/jquery.fileupload.js',
+            src + 'js/vendor/jquery-file-upload/jquery.fileupload-process.js',
+            src + 'js/vendor/jquery-file-upload/jquery.fileupload-image.js',
+            src + 'js/vendor/jquery-file-upload/jquery.fileupload-validate.js',
+            src + 'js/vendor/jquery-file-upload/jquery.fileupload-ui.js'
+        ])
         .pipe(uglify())
+        .pipe(concat('vendor.min.js'))
         .pipe(gulp.dest(dest + 'js'));
 });
 
 // build custom js
 gulp.task('jsCustom', function() {
-    return gulp.src(['путь', 'путь'])
+    return gulp.src([
+            src + 'js/jquery-file-upload.js',
+            src + 'js/base.js'
+        ])
         .pipe(uglify())
+        .pipe(concat('scripts.min.js'))
         .pipe(gulp.dest(dest + 'js'));
 });
 
@@ -63,14 +79,14 @@ gulp.task('sass', function () {
 });
 
 // Static Server + watching scss/html files
-gulp.task('watch', ['sass'], function() {
+gulp.task('watch', ['sass', 'js'], function() {
     /*
     browserSync.init({
         server: src
     });
     */
     gulp.watch(src + 'sass/**/*.scss', ['sass']);
-    //gulp.watch(src + 'js/**/*.js', ['js']);
+    gulp.watch(src + 'js/**/*.js', ['js']);
     //gulp.watch(src + "**/*").on('change', browserSync.reload);
 
 });
