@@ -29,6 +29,10 @@ body {
   font-family: $fontsBase;
 }
 
+i {
+  display: inline-block;
+}
+
 .text-right {
   text-align: right;
 }
