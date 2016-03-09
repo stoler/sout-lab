@@ -1,47 +1,36 @@
-%sprite {
-  background-image: url("../img/spritesheet.png");
-  background-repeat: no-repeat;
-  display: block;
+.icon-blue-down-arrow {
+  background-image: url(../../img/sprite.png);
+  background-position: -58px 0px;
+  width: 41px;
+  height: 17px;
 }
-
-.sprite-icon-close-btn {
-  @extend %sprite;
+.icon-close {
+  background-image: url(../../img/sprite.png);
+  background-position: -36px -20px;
   width: 18px;
   height: 18px;
-  background-position: -10px -10px;
 }
-
-.sprite-icon_fb {
-  @extend %sprite;
-  width: 37px;
-  height: 37px;
-  background-position: -48px -10px;
+.icon-is-check {
+  background-image: url(../../img/sprite.png);
+  background-position: -36px 0px;
+  width: 21px;
+  height: 19px;
 }
-
-.sprite-icon_in {
-  @extend %sprite;
-  width: 37px;
-  height: 37px;
-  background-position: -10px -67px;
+.icon-white-down-arrow {
+  background-image: url(../../img/sprite.png);
+  background-position: -58px -18px;
+  width: 41px;
+  height: 17px;
 }
-
-.sprite-icon_ok {
-  @extend %sprite;
-  width: 37px;
-  height: 37px;
-  background-position: -67px -67px;
+.icon-white-right-arrow {
+  background-image: url(../../img/sprite.png);
+  background-position: 0px 0px;
+  width: 17px;
+  height: 41px;
 }
-
-.sprite-icon_tw {
-  @extend %sprite;
-  width: 37px;
-  height: 37px;
-  background-position: -105px -10px;
-}
-
-.sprite-icon_vk {
-  @extend %sprite;
-  width: 37px;
-  height: 37px;
-  background-position: -124px -67px;
+.icon-yellow-arrow {
+  background-image: url(../../img/sprite.png);
+  background-position: -18px 0px;
+  width: 17px;
+  height: 41px;
 }

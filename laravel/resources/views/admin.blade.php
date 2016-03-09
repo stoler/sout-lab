@@ -11,9 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" href="/laravel/resources/assets/dev/css/vendor/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/laravel/resources/assets/build/css/style.min.css"/>
     <!--[if lt IE 9]>
-    <link rel="stylesheet" href="assets/css/ie8.min.css"/>
     <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -41,12 +40,12 @@
                     </div>
                 </div>
                 <form action="#" class="b-admin__form">
-                    <h3>Загрузка динммического контента</h3>
+                    <h3>Загрузка динамического контента</h3>
                     <div class="form-group">
                         <input type="file" placeholder="Загрузите excel c данными кампании"/>
                     </div>
                     <div class="form-group">
-                        <button class="e-button" type="submit">Загрузить</button>
+                        <button class="btn--goal" type="submit">Загрузить</button>
                     </div>
                 </form>
             </div>
@@ -86,7 +85,7 @@
                         <input type="text" placeholder="Преимущество"/>
                     </div>
                     <div class="form-group">
-                        <button class="e-button">Добавить преимущества</button>
+                        <button class="btn">Добавить преимущества</button>
                     </div>
                 </form>
             </div>
@@ -126,7 +125,7 @@
                         <input type="text" placeholder="Ссылка на youtube"/>
                     </div>
                     <div class="form-group">
-                        <button class="e-button">Добавить отзыв</button>
+                        <button class="btn">Добавить отзыв</button>
                     </div>
                 </form>
             </div>
@@ -166,7 +165,7 @@
                         <input type="file" placeholder="Загрузить сертификат"/>
                     </div>
                     <div class="form-group">
-                        <button class="e-button">Добавить сертификат</button>
+                        <button class="btn">Добавить сертификат</button>
                     </div>
                 </form>
             </div>
@@ -200,7 +199,7 @@
                         <input type="file" placeholder="Добавить пользователя"/>
                     </div>
                     <div class="form-group">
-                        <button class="e-button">Добавить пользователя</button>
+                        <button class="btn">Добавить пользователя</button>
                     </div>
                 </form>
             </div>

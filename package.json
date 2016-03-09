@@ -1,14 +1,16 @@
 {
   "private": true,
   "devDependencies": {
+    "browser-sync": "latest",
     "gulp": "latest",
-    "gulp-csso": "latest",
-    "gulp-uglify": "latest",
+    "gulp-compass": "latest",
     "gulp-concat": "latest",
+    "gulp-csso": "latest",
+    "gulp-if": "^2.0.0",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
-    "gulp-compass": "latest",
-    "browser-sync": "latest"
+    "gulp-spritesmith": "0.0.2",
+    "gulp-uglify": "latest"
   },
   "dependencies": {}
 }

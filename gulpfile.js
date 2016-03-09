@@ -4,14 +4,26 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
-    compass = require('gulp-compass');
+    compass = require('gulp-compass'),
+    spritesmith = require("gulp-spritesmith"),
+    gulpif = require("gulp-if");
     //browserSync = require('browser-sync').create();
 
 var src = './laravel/resources/assets/dev/',
     dest = './laravel/resources/assets/build/',
     root = './laravel/resources/assets/';
-// сборка спрайтов
 
+// сборка спрайтов
+gulp.task('sprite', function () {
+    return  gulp.src(src + 'img/icons/*.png')
+        .pipe(spritesmith({
+            imgName: 'sprite.png',
+            styleName: '_sprite.scss',
+            imgPath: '../../img/sprite.png'
+        }))
+        .pipe(gulpif('*.png', gulp.dest(root + 'img/')))
+        .pipe(gulpif('*.scss', gulp.dest(src + 'sass/')));
+});
 
 
 //==========================================
