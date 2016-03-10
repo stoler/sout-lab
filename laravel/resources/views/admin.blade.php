@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <base href="/"/>
@@ -69,39 +70,17 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2>Преимущества</h2>
-                <div class="b-admin__current">
-                    <h3>Список перимуществ</h3>
-                    <div class="b-admin__list">
-                        <div class="b-admin__list-item">
-                            Преимущество 1
-                            <a href="#" class="b-admin__delete" title="Удалить">
-                                <i class="icon-close"></i>
-                            </a>
-                        </div>
-                        <div class="b-admin__list-item">
-                            Преимущество 2
-                            <a href="#" class="b-admin__delete" title="Удалить">
-                                <i class="icon-close"></i>
-                            </a>
-                        </div>
-                        <div class="b-admin__list-item">
-                            Преимущество 3
-                            <a href="#" class="b-admin__delete" title="Удалить">
-                                <i class="icon-close"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <form action="/admin/advant/add/" class="b-admin__form">
-                    <h3>Добавить преимущество</h3>
+
+                <? if (count($advant)) { ?>
+                <form action="/admin/advant-update/<?= $advant[0]->id ?>" class="b-admin__form" method="post">
                     <div class="form-group">
-                        <input type="text" placeholder="Преимущество"/>
-                        <input type="text" placeholder="Индекс сортировки"/>
+                        <textarea name="advant" id="advant" placeholder="Преимущество"><?= $advant[0]->text ?></textarea>
                     </div>
                     <div class="form-group">
-                        <button class="btn">Добавить преимущества</button>
+                        <button class="btn">Редактировать</button>
                     </div>
                 </form>
+                <? } ?>
             </div>
         </div>
         <!-- ========================= /Преимущества ============================ -->
@@ -192,29 +171,40 @@
                 <h2>Управление пользователями</h2>
                 <div class="b-admin__current">
                     <h3>Список пользователей</h3>
+
+                    <? if (count($arUsers)) { ?>
                     <div class="b-admin__list">
-                        <div class="b-admin__list-item">
-                            Пользователь 1
-                            <a href="#" class="b-admin__delete" title="Удалить">
-                                <i class="icon-close"></i>
-                            </a>
-                        </div>
-                        <div class="b-admin__list-item">
-                            Пользователь 2
-                            <a href="#" class="b-admin__delete" title="Удалить">
-                                <i class="icon-close"></i>
-                            </a>
-                        </div>
+                        <? foreach ($arUsers as $user) { ?>
+                            <div class="b-admin__list-item">
+                                <form action="/admin/user-update/<?= $user->id ?>" method="post">
+                                    <div class="form-group">
+                                        <input type="email" placeholder="email" name="email" value="<?= $user->email ?>"/>
+                                        <input type="password" placeholder="Пароль" name="password"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn" type="submit">Редактировать пользователя</button>
+                                    </div>
+                                </form>
+                                <a href="/admin/user-delete/<?= $user->id ?>" class="b-admin__delete" title="Удалить">
+                                    <i class="icon-close"></i>
+                                </a>
+                            </div>
+                       <? }?>
                     </div>
+                    <? } ?>
                 </div>
-                <form action="#" class="b-admin__form">
+
+                <? foreach ($errors->all() as $error) { ?>
+                <div class="form-error"><?= $error ?></div>
+                <? } ?>
+                <form action="/admin/user/" method="post" class="b-admin__form">
                     <h3>Добавить пользователя</h3>
                     <div class="form-group">
-                        <input type="email" placeholder="email"/>
-                        <input type="password" placeholder="Пароль"/>
+                        <input type="email" placeholder="email" name="email"/>
+                        <input type="password" placeholder="Пароль" name="password"/>
                     </div>
                     <div class="form-group">
-                        <button class="btn">Добавить пользователя</button>
+                        <button class="btn" type="submit">Добавить пользователя</button>
                     </div>
                 </form>
             </div>

@@ -37,7 +37,7 @@ Route::get('/', [
 ]);
 
 Route::get('admin', [
-    'uses' => 'UserController@index',
+    'uses' => 'AdminController@index',
     'as' => 'admin',
 ]);
 
@@ -95,3 +95,37 @@ Route::delete('admin/seo-upload',[
     'uses' => 'JQueryFileUpload@index',
     'as' => 'seo-upload'
 ]);
+
+/*************** Users *********************/
+Route::get('admin/user',[
+    'uses' => 'UserController@getList',
+    'as' => 'user-list'
+]);
+
+Route::get('admin/user-item/{id}',[
+    'uses' => 'UserController@getItem',
+    'as' => 'user-item'
+]);
+
+Route::post('admin/user',[
+    'uses' => 'UserController@addItem',
+    'as' => 'user-add'
+]);
+
+Route::post('admin/user-update/{id}',[
+    'uses' => 'UserController@updateItem',
+    'as' => 'user-update'
+]);
+
+Route::get('admin/user-delete/{id}',[
+    'uses' => 'UserController@deleteItem',
+    'as' => 'user-delete'
+]);
+
+/*************** /Users ********************/
+/*************** Advant ********************/
+Route::post('admin/advant-update/{id}',[
+    'uses' => 'AdvantController@updateItem',
+    'as' => 'advant-update'
+]);
+/*************** /Advant ********************/

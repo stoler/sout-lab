@@ -43,10 +43,6 @@ class ContentModel extends Model
             return false;
         }
 
-        echo '<pre>';
-        print_r($arData);
-        echo '</pre>';
-
         DB::table(self::$contentTable)
             ->truncate();
 
