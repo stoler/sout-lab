@@ -1,0 +1,50 @@
+.b-admin {
+  &__list {
+    margin: 0 0 30px;
+  }
+
+  &__tpl {
+    &-td {
+      padding: 0 20px 0;
+    }
+  }
+
+  &__logo {
+    color: $colorLight;
+    float: left;
+  }
+
+  &__logout {
+    color: $colorLight;
+    display: inline-block;
+    vertical-align: middle;
+
+    &-wrapper {
+      float: right;
+    }
+
+    &:hover {
+      color: $colorYellow;
+    }
+  }
+
+  &__header-username {
+    color: #ffffff;
+    display: inline-block;
+    border-right: 1px solid;
+    vertical-align: middle;
+    padding: 0 10px 0 0;
+    margin: 0 8px 0 0;
+  }
+
+  &__tynymce {
+    margin: 0 0 10px;
+  }
+}
+
+.header {
+  @extend .after-clear;
+  background: $colorDark;
+  padding: 10px 0;
+  margin: 0 0 60px;
+}

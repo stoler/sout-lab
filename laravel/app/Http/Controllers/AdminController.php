@@ -15,9 +15,11 @@ class AdminController extends Controller
             return Redirect::route('user-login');
 
         $users = new UserController();
+        $reviews = new ReviewController();
         $advant = new AdvantController();
         $data = array(
             'arUsers' => $users->getList(),
+            'arReview' => $reviews->getList(),
             'advant' => $advant->getItem(1),
         );
 

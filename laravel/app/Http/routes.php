@@ -129,3 +129,44 @@ Route::post('admin/advant-update/{id}',[
     'as' => 'advant-update'
 ]);
 /*************** /Advant ********************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************** Review *********************/
+Route::get('admin/review',[
+    'uses' => 'ReviewController@getList',
+    'as' => 'user-list'
+]);
+
+Route::get('admin/review-item/{id}',[
+    'uses' => 'ReviewController@getItem',
+    'as' => 'review-item'
+]);
+
+Route::post('admin/review',[
+    'uses' => 'ReviewController@addItem',
+    'as' => 'review-add'
+]);
+
+Route::post('admin/review-update/{id}',[
+    'uses' => 'ReviewController@updateItem',
+    'as' => 'review-update'
+]);
+
+Route::get('admin/review-delete/{id}',[
+    'uses' => 'ReviewController@deleteItem',
+    'as' => 'review-delete'
+]);
+
+/*************** /Review ********************/

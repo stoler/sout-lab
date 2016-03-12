@@ -16,13 +16,16 @@ class MainModel extends Model {
     /****************************************************************
      * Получение списка
      * ************************************************************/
-    public function getList ($arField = array()) {
+    public function getList ($arField = array(), $orderField = 'id') {
         if (count(array_filter($arField))) {
             return DB::table($this->tableName)
                 ->where($arField)
+                ->orderBy($orderField)
                 ->get();
         }
-        return DB::table($this->tableName)->get();
+        return DB::table($this->tableName)
+            ->orderBy($orderField)
+            ->get();
     }
 
     /****************************************************************

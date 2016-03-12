@@ -1,0 +1,39 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  padding: 10px 20px;
+  line-height: 20px;
+  font-size: $size4;
+  color: $colorLight;
+  background: $colorBlue;
+  border: 0px solid;
+  font-weight: 700;
+  position: relative;
+  @include transition(all 0.4s ease);
+  margin: 0 0 10px;
+
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+    outline: none;
+    color: $colorDark;
+  }
+
+  &--goal {
+    @extend .btn;
+    color: $colorYellow;
+    background: $colorDark;
+    padding: 22px 70px 28px 30px;
+
+    &:hover {
+      color: $colorLight;
+    }
+  }
+}
+
+button, input[type="submit"] {
+  @extend .btn;
+}

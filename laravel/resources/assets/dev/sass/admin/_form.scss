@@ -1,0 +1,40 @@
+.form {
+
+}
+
+.e-input {
+
+}
+
+.e-textarea {
+
+}
+
+input[type="text"], input[type="email"],input[type="password"], textarea {
+  border: 1px solid $colorBlue;
+  width: 220px;
+  height: 40px;
+  line-height: 1;
+  color: $colorBlue;
+  padding: 3px 10px;
+  font-size: $size4;
+  vertical-align: middle;
+  margin: 0 0 10px;
+
+  @include input-placeholder {
+    color: $colorBlue;
+  }
+  &:focus {
+    border: 1px solid $colorDark;
+    color: $colorDark;
+
+    @include input-placeholder {
+      color: $colorDark;
+      @include opacity(0.6);
+    }
+  }
+}
+
+textarea {
+  height: 100px;
+}
